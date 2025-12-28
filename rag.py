@@ -6,9 +6,9 @@ from langchain_community.vectorstores import FAISS
 from langchain_community.embeddings import HuggingFaceEmbeddings
 
 
-# =========================
+
 # LOAD LLM & EMBEDDINGS
-# =========================
+
 llm = OllamaLLM(model="llama3")
 embeddings = HuggingFaceEmbeddings(
     model_name="sentence-transformers/all-MiniLM-L6-v2"
@@ -17,9 +17,8 @@ embeddings = HuggingFaceEmbeddings(
 
 VECTOR_DB_PATH = "vector_store"
 
-# =========================
 # BUILD VECTOR DATABASE
-# =========================
+
 def build_vector_db():
     docs = []
 
@@ -46,9 +45,8 @@ def build_vector_db():
 
     print(f"Vector DB built successfully with {len(chunks)} chunks.")
 
-# =========================
 # LOAD VECTOR DATABASE
-# =========================
+
 def load_vector_db():
     if not os.path.exists(VECTOR_DB_PATH):
         raise FileNotFoundError("Vector DB not found. Run build_vector_db() first.")
@@ -59,9 +57,8 @@ def load_vector_db():
         allow_dangerous_deserialization=True
     )
 
-# =========================
 # ASK PDF DOCUMENTS (RAG)
-# =========================
+
 def ask_pdf(question):
     db = load_vector_db()
     docs = db.similarity_search(question, k=4)
@@ -88,4 +85,5 @@ def get_pdf_context(question):
     db = load_vector_db()
     docs = db.similarity_search(question, k=4)
     return "\n\n".join([d.page_content for d in docs])
+
 
