@@ -44,7 +44,7 @@ Answer + Table + Chart
 
 ---
 
-## 🔒 Key Design Features
+## Key Design Features
 
 * SELECT-only SQL guardrails (no data modification)
 * Grounded answers (no hallucinated explanations)
@@ -53,7 +53,7 @@ Answer + Table + Chart
 
 ---
 
-## 🎯 Why This Project Is Strong
+## Why This Project Is Strong
 
 * Demonstrates **real AI system design**, not a notebook demo
 * Integrates **structured + unstructured data**
@@ -62,11 +62,3 @@ Answer + Table + Chart
 * Runs **locally**
 ---
 
-
-
-* ✨ Convert this into **resume bullet points**
-* 🎯 Tailor it for **consulting / analytics roles**
-* 🧠 Do **mock interview questions**
-* 📊 Add a simple **architecture diagram** for GitHub
-
-Just tell me what you want next.
